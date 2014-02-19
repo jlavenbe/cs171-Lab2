@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset=utf-8 />
+  <title>CS 171 Lab 2</title>
+  <style type="text/css">
+    div {
+        margin: 10px;
+        font-size: 20px;
+        color: #000;
+        padding: 10px; 
+        background-color:gold;
+        font-family: sans-serif;
+        border-style:solid;
+        border-width:1px;
+    }
+  </style>
+  <script src="http://d3js.org/d3.v3.min.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+
+  <div style="width: 0px;">Homer</div>
+  <div style="width: 0px;">Marge</div>
+  <div style="width: 0px;">Bart</div>
+  <div style="width: 0px;">Lisa</div>
+  <div style="width: 0px;">Maggie</div>
+
+<script type="text/javascript">
+  var dataset = [26, 24, 10, 8, 1]
+
+  d3.selectAll("div")
+    .data(dataset)
+    .transition().duration(function(d, i) { return 1000*i;})
+    .style("width", function(d) { return (10*d) + "px"; })
+	
+	.style("background-color", function(d) {
+    if (d > 15) { 
+      return "red";
+    }
+  })
+	</script>
+</body>
+</html>
